@@ -289,8 +289,8 @@ The WebPage class of the above test case is as below:
 
 
 The test cases are presented in 5 different files. You can view all the test cases here:
-- [Cart.feature](src/test/resources/features/Cart.feature)
-- [Checkout.feature](src/test/resources/features/Checkout.feature)
-- [Login.feature](src/test/resources/features/Login.feature)
-- [Product.feature](src/test/resources/features/Product.feature)
-- [Security.feature](src/test/resources/features/Security.feature)
+- [Cart.feature](src/test/resources/webFeatures/Cart.feature)
+- [Checkout.feature](src/test/resources/webFeatures/Checkout.feature)
+- [Login.feature](src/test/resources/webFeatures/Login.feature)
+- [Product.feature](src/test/resources/webFeatures/Product.feature)
+- [Security.feature](src/test/resources/webFeatures/Security.feature)
