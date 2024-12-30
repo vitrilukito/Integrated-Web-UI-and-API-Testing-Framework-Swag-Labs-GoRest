@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static helper.Utility.driver;
+import static helper.WebUtility.driver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class Model {
+public class WebModel {
 
     private static Request details1;
 

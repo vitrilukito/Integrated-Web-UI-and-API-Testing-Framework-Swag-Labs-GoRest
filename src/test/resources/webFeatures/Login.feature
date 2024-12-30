@@ -1,3 +1,4 @@
+@web
 Feature: Test the Login Functionality on web application
 
   @web

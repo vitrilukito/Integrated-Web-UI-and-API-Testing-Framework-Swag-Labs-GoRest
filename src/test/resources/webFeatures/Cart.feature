@@ -1,3 +1,4 @@
+@web
 Feature: Test the Cart Functionality on web application
 
   @web

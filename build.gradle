@@ -20,30 +20,57 @@ dependencies {
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.20.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
     testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.26.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.5.0'
+    testImplementation group: 'org.json', name: 'json', version: '20240303'
+    implementation group: 'io.rest-assured', name: 'json-schema-validator', version: '5.5.0'
 }
 
-test {
+task apiTest(type: Test) {
     useJUnitPlatform()
-    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
-}
-configurations{
-    cucumberRuntime{
-        extendsFrom testImplementation
-    }
-}
-
-tasks.register('webTest'){
+    systemProperty 'cucumber.filter.tags', '@api'
     dependsOn assemble, testClasses
-    doLast{
-        javaexec{
-            main = "io.cucumber.core.cli.Main"
+    configurations {
+        cucumberRuntime {
+            extendsFrom testImplementation
+        }
+    }
+    doLast {
+        javaexec {
+            main = 'io.cucumber.core.cli.Main'
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [
                     '--plugin', 'pretty',
-                    '--plugin', 'html:reports/cucumber-web-report.html', 'json:reports/cucumber.json',
+                    '--plugin', 'html:reports/cucumber-api-report.html',
+                    '--plugin', 'json:reports/cucumber-api.json',
+                    '--glue', 'stepDef',
+                    '--tags', '@api',
+                    'src/test/resources/apiFeatures'
+            ]
+        }
+    }
+}
+
+task webTest(type: Test) {
+    useJUnitPlatform()
+    systemProperty 'cucumber.filter.tags', '@web'
+    dependsOn assemble, testClasses
+    configurations {
+        cucumberRuntime {
+            extendsFrom testImplementation
+        }
+    }
+    doLast {
+        javaexec {
+            main = 'io.cucumber.core.cli.Main'
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:reports/cucumber-web-report.html',
+                    '--plugin', 'json:reports/cucumber-web.json',
                     '--glue', 'stepDef',
                     '--tags', '@web',
-                    'src/test/resources/features'
+                    'src/test/resources/webFeatures'
             ]
         }
     }

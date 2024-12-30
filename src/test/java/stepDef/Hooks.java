@@ -2,7 +2,7 @@ package stepDef;
 
 import io.cucumber.java.*;
 
-import static helper.Utility.*;
+import static helper.WebUtility.*;
 
 public class Hooks {
 

@@ -1,3 +1,4 @@
+@web
 Feature: Test the Product Page Usability and Functionality on web application
 
 # FOR standard_user

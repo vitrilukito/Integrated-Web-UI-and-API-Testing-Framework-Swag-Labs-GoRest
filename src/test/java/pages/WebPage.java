@@ -1,6 +1,6 @@
 package pages;
-import static helper.Model.*;
-import static helper.Utility.driver;
+import static helper.WebModel.*;
+import static helper.WebUtility.driver;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import org.junit.runner.Request;

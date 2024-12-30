@@ -1,3 +1,4 @@
+@web
 Feature: Test the Security on web application
 
   @web

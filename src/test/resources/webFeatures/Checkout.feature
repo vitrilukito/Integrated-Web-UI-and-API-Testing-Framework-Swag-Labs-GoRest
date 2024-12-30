@@ -1,3 +1,4 @@
+@web
 Feature: Test the Checkout Functionality on web application
 
   @web

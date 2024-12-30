@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
 
-public class Utility {
+public class WebUtility {
 
     public static WebDriver driver;
 
