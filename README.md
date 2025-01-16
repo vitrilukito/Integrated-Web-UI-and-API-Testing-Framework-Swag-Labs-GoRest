@@ -269,7 +269,8 @@ Here are the step definitions that implement the above test case:
 The WebPage class of the above test case is as below:
 
 
-<img width="474" alt="image" src="https://github.com/user-attachments/assets/65b58555-2728-4553-8d67-a3fce614211d" />
+<img width="576" alt="image" src="https://github.com/user-attachments/assets/c4589ef3-3411-484f-ba6f-4408b249cc1b" />
+
 
 
 
@@ -278,7 +279,7 @@ The WebPage class of the above test case is as below:
 **Sample of boundary test case:**
 
 
-<img width="585" alt="image" src="https://github.com/user-attachments/assets/f811adcb-fcea-426e-a722-ec03f55121dd" />
+<img width="486" alt="image" src="https://github.com/user-attachments/assets/1ef1aba1-f95d-4770-bc24-d9d1177c8f79" />
 
 
 
